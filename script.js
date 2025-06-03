@@ -63,35 +63,34 @@ splitAll();
 //============================ GSAP ===========================
 
 // =========================== NAV ===========================
-var tl = gsap.timeline();
-gsap.from(".navbar a",{
-    opacity: 0,
-    delay: 0.3,
-    duration: 0.6,
-    stagger: 0.3,
-    ease: "power4.out"
-})
-tl.to(".menu",{
-    right: 0,
-    duration: 0.3
-})
-tl.from(".menu a",{
-    x: 200,
-    duration: 0.3,
-    stagger: 0.2,
-    opacity: 0
-})
-tl.from(".menu i",{
-    opacity: 0
-})
-tl.pause();
+const icon = document.querySelector(".ri-menu-3-line");
+const close = document.querySelector(".ri-close-line");
 
-icon.addEventListener("click",function(){
+var tl = gsap.timeline({ paused: true });
+
+tl.to(".menu", {
+    right: 0,
+    duration: 0.3,
+    ease: "power2.out"
+})
+    .from(".menu a", {
+        x: 200,
+        duration: 0.3,
+        stagger: 0.2,
+        opacity: 0
+    })
+    .from(".menu i", {
+        opacity: 0,
+        duration: 0.2
+    }, "-=0.2"); // overlap a bit for smoother effect
+
+icon.addEventListener("click", function () {
     tl.play();
-})
-close.addEventListener("click",function(){
+});
+close.addEventListener("click", function () {
     tl.reverse();
-})
+});
+
 
 // ============================== intro =======================
 gsap.from(".intro .left h1 span",{
@@ -196,7 +195,7 @@ gsap.from(".footer-content", {
     scrollTrigger: {
         trigger: ".footer",
         start: "top 80%",
-        end: "top 60%",
+        end: "top 10%",
         scrub: 2,
         toggleActions: "play none none reverse"
     },
