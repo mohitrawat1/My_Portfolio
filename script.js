@@ -117,7 +117,7 @@ var tl2 = gsap.timeline({
         trigger: ".exp",
         scroller: "body", 
         start: "top 40%",
-        end: "top 20%",
+        end: "top 25%",
         scrub: 1
     }
 });
@@ -145,8 +145,8 @@ var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: ".projects",
         scroller: "body", 
-        start: "top 30%",
-        end: "top 20%",
+        start: "top 40%",
+        end: "top 25%",
         scrub: 2,
     }
 });
@@ -195,8 +195,8 @@ string.addEventListener("mouseleave", function () {
 gsap.from(".footer-content", {
     scrollTrigger: {
         trigger: ".footer",
-        start: "top 80%",
-        end: "top 10%",
+        start: "top 40%",
+        end: "top 25%",
         scrub: 2,
         toggleActions: "play none none reverse"
     },
