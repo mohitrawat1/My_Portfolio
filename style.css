@@ -91,7 +91,7 @@ nav {
 }
 
 .menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: -300px;
     width: 250px;
