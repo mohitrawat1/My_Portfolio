@@ -200,7 +200,7 @@ gsap.from(".footer-content", {
         toggleActions: "play none none reverse",
     },
     opacity: 0,
-    y: 50,
+    y: 35,
     duration: 1,
     ease: "power4.out"
 });
