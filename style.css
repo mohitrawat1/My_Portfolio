@@ -448,6 +448,9 @@ svg{
     .tn a{
         display: block;;
     }
+    body{
+    overflow-x: hidden;
+    }
 }
 
 @media(max-width: 820px) {
