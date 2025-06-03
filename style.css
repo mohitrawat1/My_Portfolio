@@ -94,7 +94,7 @@ nav {
 }
 
 .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -300px;
     width: 250px;
@@ -104,8 +104,9 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    transition: right 0.4s ease;
+    transition: none;
     z-index: 999;
+    
 }
 
 .menu.show {
