@@ -118,7 +118,6 @@ var tl2 = gsap.timeline({
         start: "top 60%",
         end: "top 10%",
         scrub: 1,
-        markers: true
     }
 });
 
@@ -148,7 +147,6 @@ var tl3 = gsap.timeline({
         start: "top 60%",
         end: "top 10%",
         scrub: 2,
-        markers: true
     }
 });
 
@@ -200,7 +198,6 @@ gsap.from(".footer-content", {
         end: "top 30%",
         scrub: 2,
         toggleActions: "play none none reverse",
-        markers: true
     },
     opacity: 0,
     y: 50,
