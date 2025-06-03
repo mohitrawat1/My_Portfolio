@@ -116,8 +116,8 @@ var tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".exp",
         scroller: "body", 
-        start: "top 60%",
-        end: "top 10%",
+        start: "top 40%",
+        end: "top 20%",
         scrub: 1
     }
 });
@@ -145,8 +145,8 @@ var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: ".projects",
         scroller: "body", 
-        start: "top 60%",
-        end: "top 10%",
+        start: "top 30%",
+        end: "top 20%",
         scrub: 2,
     }
 });
