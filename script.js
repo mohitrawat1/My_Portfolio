@@ -63,34 +63,35 @@ splitAll();
 //============================ GSAP ===========================
 
 // =========================== NAV ===========================
-const icon = document.querySelector(".ri-menu-3-line");
-const close = document.querySelector(".ri-close-line");
-
-var tl = gsap.timeline({ paused: true });
-
-tl.to(".menu", {
-    right: 0,
-    duration: 0.3,
-    ease: "power2.out"
+var tl = gsap.timeline();
+gsap.from(".navbar a",{
+    opacity: 0,
+    delay: 0.3,
+    duration: 0.6,
+    stagger: 0.3,
+    ease: "power4.out"
 })
-    .from(".menu a", {
-        x: 200,
-        duration: 0.3,
-        stagger: 0.2,
-        opacity: 0
-    })
-    .from(".menu i", {
-        opacity: 0,
-        duration: 0.2
-    }, "-=0.2"); // overlap a bit for smoother effect
+tl.to(".menu",{
+    right: 0,
+    duration: 0.3
+})
+tl.from(".menu a",{
+    x: 200,
+    duration: 0.3,
+    stagger: 0.2,
+    opacity: 0
+})
+tl.from(".menu i",{
+    opacity: 0
+})
+tl.pause();
 
-icon.addEventListener("click", function () {
+icon.addEventListener("click",function(){
     tl.play();
-});
-close.addEventListener("click", function () {
+})
+close.addEventListener("click",function(){
     tl.reverse();
-});
-
+})
 
 // ============================== intro =======================
 gsap.from(".intro .left h1 span",{
