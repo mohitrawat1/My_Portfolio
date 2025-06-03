@@ -5,11 +5,13 @@
     margin: 0;
     padding: 0;
 }
-html {
+html{
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
+html{
+    overflow-x: hidden;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
@@ -181,7 +183,15 @@ nav {
 }
 
 /* ===================================== EXP ================ */
-
+.exp1 h1{
+    text-align: center;
+    color: rgb(125, 0, 170);
+    padding: 10px;
+    font-size: 34px;
+}
+.exp1{
+    background-color: #121921;
+}
 
 .exp {
     height: 100vh;
@@ -275,7 +285,15 @@ nav {
     color: white;
     border: 1px solid white;
 }
-
+.proj{
+    background-color: black;
+}
+.proj h1{
+    font-size: 34px;
+    color: rgb(125, 0, 170);
+    text-align: center;
+    padding: 12px;
+}
 .projects {
     display: flex;
     justify-content: center;
@@ -452,6 +470,9 @@ svg{
     }
     .tn a{
         display: block;;
+    }
+    .exp1 h1, .proj h1{
+        font-size: 28px;
     }
 }
 
