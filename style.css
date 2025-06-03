@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -96,7 +99,7 @@ nav {
     right: -300px;
     width: 250px;
     height: 100vh;
-    background-color: #2222223a;
+    background-color: #22222293;
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -448,9 +451,6 @@ svg{
     .tn a{
         display: block;;
     }
-    body{
-    overflow-x: hidden;
-    }
 }
 
 @media(max-width: 820px) {
@@ -480,27 +480,24 @@ svg{
     }
 }
 
-@media(max-width: 1024px) {
-    .guitar {
-            display: none;
-        }
-    
-        .cursor {
-            display: none;
-        }
-    
-        .exp {
-            flex-direction: column;
-            flex-wrap: nowrap;
-            height: fit-content;
-        }
-    
-        .card {
-            width: 80%;
-            flex-direction: column;
-            height: fit-content;
-        }
+@media (max-width: 1024px) {
 
+    .guitar,
+    .cursor {
+        display: none;
+    }
+
+    .exp {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: fit-content;
+    }
+
+    .card {
+        width: 80%;
+        flex-direction: column;
+        height: fit-content;
+    }
 }
 
 @media screen and (min-width: 768px) {
