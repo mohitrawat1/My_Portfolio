@@ -47,13 +47,13 @@ main.addEventListener("mousemove", function (dets) {
 //     dev.innerHTML = clutter;
 // }
 
-function splitAll(){
+function splitAll() {
     var dev = document.querySelectorAll(".dev");
-    dev.forEach(function(e){
+    dev.forEach(function (e) {
         var dev1 = e.textContent;
         var devA = dev1.split("");
         var clutter = "";
-        devA.forEach(function(el){
+        devA.forEach(function (el) {
             clutter += `<span class="a">${el}</span>`
         });
         e.innerHTML = clutter;
@@ -63,45 +63,44 @@ splitAll();
 //============================ GSAP ===========================
 
 // =========================== NAV ===========================
-var tl = gsap.timeline();
-gsap.from(".navbar a",{
-    opacity: 0,
-    delay: 0.3,
-    duration: 0.6,
-    stagger: 0.3,
-    ease: "power4.out"
-})
-tl.to(".menu",{
+var tl = gsap.timeline({ paused: true });
+
+tl.to(".menu", {
     right: 0,
-    duration: 0.3
-})
-tl.from(".menu a",{
-    x: 200,
+    duration: 0.3,
+    ease: "power4.out"
+});
+tl.to(".menu a", {
+    x: 0,
+    opacity: 1,
     duration: 0.3,
     stagger: 0.2,
-    opacity: 0
-})
-tl.from(".menu i",{
-    opacity: 0
-})
-tl.pause();
+    ease: "power4.out"
+}, "-=0.2");
+tl.to(".menu i", {
+    opacity: 1,
+    duration: 0.3,
+    ease: "power4.out"
+}, "-=0.3");
 
-icon.addEventListener("click",function(){
+icon.addEventListener("click", function () {
     tl.play();
-})
-close.addEventListener("click",function(){
+});
+
+close.addEventListener("click", function () {
     tl.reverse();
-})
+});
+
 
 // ============================== intro =======================
-gsap.from(".intro .left h1 span",{
+gsap.from(".intro .left h1 span", {
     opacity: 0,
     duration: 0.4,
     repeat: -1,
     yoyo: true,
     ease: "power4.out"
 })
-gsap.from(".a",{
+gsap.from(".a", {
     x: -50,
     opacity: 0,
     duration: 0.8,
@@ -115,9 +114,9 @@ gsap.registerPlugin(ScrollTrigger);
 var tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".exp",
-        scroller: "body", 
-        start: "top 40%",
-        end: "top 25%",
+        scroller: "body",
+        start: "top 60%",
+        end: "top 10%",
         scrub: 1,
         markers: true
     }
@@ -127,7 +126,7 @@ tl2.from(".exp .card.lt", {
     x: -200,
     opacity: 0,
     duration: 1,
-    delay:0.5,
+    delay: 0.5,
     stagger: 0.2,
     ease: "power4.out"
 }, 0);
@@ -135,7 +134,7 @@ tl2.from(".exp .card.lt", {
 tl2.from(".exp .card.rt", {
     x: 200,
     opacity: 0,
-    delay:0.5,
+    delay: 0.5,
     duration: 1,
     stagger: 0.2,
     ease: "power4.out"
@@ -145,11 +144,11 @@ tl2.from(".exp .card.rt", {
 var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: ".projects",
-        scroller: "body", 
-        start: "top 40%",
-        end: "top 25%",
+        scroller: "body",
+        start: "top 60%",
+        end: "top 10%",
         scrub: 2,
-        markers:true
+        markers: true
     }
 });
 
@@ -176,10 +175,10 @@ var path = 'M 10 100 Q 500 100 990 100';
 var finalPath = 'M 10 100 Q 500 100 990 100';
 
 var string = document.querySelector(".string");
-string.addEventListener("mousemove",function(e){
+string.addEventListener("mousemove", function (e) {
     path = `M 10 100 Q ${e.x} ${e.y} 990 100`;
     gsap.to("svg path", {
-        attr: {  
+        attr: {
             d: path
         },
         duration: 0.3,
@@ -200,7 +199,8 @@ gsap.from(".footer-content", {
         start: "top 70%",
         end: "top 30%",
         scrub: 2,
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none reverse",
+        markers: true
     },
     opacity: 0,
     y: 50,
