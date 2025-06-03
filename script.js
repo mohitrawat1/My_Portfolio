@@ -109,6 +109,8 @@ gsap.from(".a", {
     repeat: -1
 })
 // ============================== exp ========================
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 var tl2 = gsap.timeline({
@@ -118,8 +120,15 @@ var tl2 = gsap.timeline({
         start: "top 60%",
         end: "top 10%",
         scrub: 1,
+
     }
 });
+tl2.from(".exp1 h1",{
+    y: -50,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1
+})
 
 tl2.from(".exp .card.lt", {
     x: -200,
@@ -147,9 +156,15 @@ var tl3 = gsap.timeline({
         start: "top 60%",
         end: "top 10%",
         scrub: 2,
+
     }
 });
-
+tl3.from(".proj h1", {
+    y: -50,
+    opacity: 0,
+    delay: 0.1,
+    duration: 1
+})
 tl3.from(".projects .cards.lt", {
     x: -200,
     opacity: 0,
@@ -169,12 +184,12 @@ tl3.from(".projects .cards.rt", {
 }, 0);
 // =============================== guitar ================================
 
-var path = 'M 10 100 Q 500 100 990 100';
-var finalPath = 'M 10 100 Q 500 100 990 100';
+var path = 'M 10 50 Q 500 50 990 50';
+var finalPath = 'M 10 50 Q 500 50 990 50';
 
 var string = document.querySelector(".string");
 string.addEventListener("mousemove", function (e) {
-    path = `M 10 100 Q ${e.x} ${e.y} 990 100`;
+    path = `M 10 50 Q ${e.x} ${e.y} 990 50`;
     gsap.to("svg path", {
         attr: {
             d: path
@@ -200,7 +215,7 @@ gsap.from(".footer-content", {
         toggleActions: "play none none reverse",
     },
     opacity: 0,
-    y: 35,
+    y: 40,
     duration: 1,
     ease: "power4.out"
 });
