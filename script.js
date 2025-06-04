@@ -209,8 +209,8 @@ string.addEventListener("mouseleave", function () {
 gsap.from(".footer-content", {
     scrollTrigger: {
         trigger: ".footer",
-        start: "top 60%",
-        end: "top 30%",
+        start: "top 90%",
+        end: "top 60%",
         scrub: 2,
         toggleActions: "play none none reverse",
     },
